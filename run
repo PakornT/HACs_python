@@ -1,0 +1,6 @@
+#!/bin/bash
+
+until ./queueRetrieverServer.py $1 $2; do
+	echo "Client 'HACS' crashed with exit code $?.  Respawning.." >&2
+	sleep 1
+done
